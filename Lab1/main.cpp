@@ -76,7 +76,7 @@ int main() {
             out << sum << "\n";
             if (sum == 0)
                 isolated.push_back(i + 1);
-            if (sum == 0)
+            if (sum == 1)
                 hanging.push_back(i + 1);
             if (prevSum == -1)
                 prevSum = sum;
@@ -106,8 +106,8 @@ int main() {
             for (int j = 0; j < m; j++)
                 if (incM[i][j] == 1)
                     countOfOutputs++;
-                else if (incM[i][j] >= 2)
-                    countOfOutputs += incM[i][j] / 2;
+                else if (incM[i][j] == 2)
+                    countOfOutputs++;
             out << countOfOutputs << "\n";
         }
         out << "==================\n";
@@ -119,8 +119,8 @@ int main() {
             for (int j = 0; j < m; j++)
                 if (incM[i][j] == -1)
                     countOfInputs++;
-                else if (incM[i][j] >= 2)
-                    countOfInputs += incM[i][j] / 2;
+                else if (incM[i][j] == 2)
+                    countOfInputs++;
             out << countOfInputs << "\n";
         }
         out << "==================\n";
